@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cycle</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .error{
+            width: 60%;
+            height: 60%;
+            background-color: red;
+            padding: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        var countDivs = parseInt(prompt("Введіть кількість дівів"));
+        
+        /*
+        var count = 0;
+        while (count<countDivs){
+            document.write("<div></div>");
+            count++;
+        }
+        */
+
+        //метод .toFixed(кількість знаків після коми) > округлення
+        
+        if(countDivs===null){
+            document.write("<div class='error'>ERROR</div>")
+        }else{
+            for(var count=0; count<countDivs; count++){
+                document.write(`<div 
+                style="background-color: 
+                rgb(${parseInt(Math.random() * 255)}, 
+                ${parseInt(Math.random() * 255)}, 
+                ${parseInt(Math.random() * 255)}, 
+                ${Math.random()})"> 
+                ${count+1} </div>`);
+            }  
+        }
+
+        
+
+        /* DO-WHILE
+        var a=0;
+        do{
+            document.write(a)
+        }while(a<10)
+        */
+        
+    </script>
+</body>
+</html>
