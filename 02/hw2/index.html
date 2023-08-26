@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw#2</title>
+    <style>
+        .text{
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: rgb(75, 63, 63);
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+            //порожній квадрат 10*10
+            document.write("<span class='text'>порожній квадрат 10*10 <br/><br/></span>");
+            for(squareCount=1; squareCount<=10; squareCount++){
+                if(squareCount==1 || squareCount==10){ //заповнена лінія для 1 і останнього (10) рядка
+                    for(let a1=0; a1<10; a1++){
+                        document.write("&nbsp;&nbsp;*");
+                    }
+                    document.write("<br>");
+                }else{
+                    document.write("&nbsp;&nbsp;*");
+                    for(let a2=0; a2<8; a2++){
+                        document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
+                    }
+                    document.write("&nbsp;&nbsp;*");
+                    document.write("<br>");
+                }
+            }
+            
+            document.write("<br><br><br><br>");
+
+            //прямокутний трикутник
+            document.write("<span class='text'>прямокутний трикутник <br/><br/></span>");
+            for(pryamCount=1; pryamCount<=10; pryamCount++){
+                for(let i=1; i<=pryamCount; i++){
+                    document.write("&nbsp;&nbsp;*");
+                }
+                
+                document.write("<br>");
+            }
+
+            document.write("<br><br><br><br>");
+
+            //рівносторонній трикутник
+            document.write("<span class='text'>рівносторонній трикутник <br/><br/></span>");
+            document.write("<div style='text-align: center; display: inline-block;'>")
+            for(let rivnCount=1; rivnCount<=10; rivnCount++){
+                for(let b1=1; b1<=rivnCount; b1++){
+                    document.write("&nbsp;&nbsp;&nbsp;&nbsp;*");
+                }
+                document.write("<br>");
+            }
+            document.write("</div>")
+
+            document.write("<br><br><br><br>");
+
+            //ромб
+            document.write("<span class='text'>ромб <br/><br/></span>");
+            document.write("<div style='text-align: center; display: inline-block;'>")
+
+                    for(let c1=1; c1<=6; c1++){ //цикл для верхньої частини ромба
+                        for(let c2=1; c2<=c1; c2++){
+                            document.write("&nbsp;&nbsp;&nbsp;&nbsp;*");
+                        }
+                        document.write("<br>");
+                    }
+                    for(let c3=5; c3>=1; c3--){ //цикл для нижньої частини ромба
+                        for(let c4=1; c4<=c3; c4++){
+                            document.write("&nbsp;&nbsp;&nbsp;&nbsp;*");
+                        }
+                        document.write("<br>");
+                    }
+        
+            document.write("</div>")
+
+
+
+    </script>
+</body>
+</html>
