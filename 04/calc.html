@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>калькулятор</title>
+</head>
+<body>
+    
+    <script>
+        function add(a,b){
+            return a + b;
+        }
+        function sub(a,b){
+            return a - b;
+        }
+        function mul(a,b){
+            return a * b;
+        }
+        function div(a,b){
+            return a / b;
+        }
+
+
+        function getNumbers () {
+            return [parseFloat(prompt("Введіть 1 число: ")), 
+            parseFloat(prompt("Введіть 2 число: ")), 
+            prompt("Введіть арифметичну дію: ","+-/*")];
+        }
+
+        function calc (callback, add, sub, div, mul) {
+            const arr = callback();
+
+            switch(arr[2]){
+                case "+": show(`${arr[0]} ${arr[2]} ${arr[1]}`, add(arr[0], arr[1]));
+                return
+                case "-": show(`${arr[0]} ${arr[2]} ${arr[1]}`, sub(arr[0], arr[1]));
+                return
+                case "/": show(`${arr[0]} ${arr[2]} ${arr[1]}`, div(arr[0], arr[1]));
+                return
+                case "*": show(`${arr[0]} ${arr[2]} ${arr[1]}`, mul(arr[0], arr[1]));
+                return
+            }
+        }
+
+        function show (data, rez) {
+            document.write("Результата Вашої операції "+data+": "+rez.toFixed(2)); //toFixed округлює до двох цифр після коми
+        }
+
+        calc(getNumbers, add, sub, div, mul); //передаєм callback-функцію
+    </script>
+</body>
+</html>
