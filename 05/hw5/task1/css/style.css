@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat Alternates', sans-serif;
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+form{
+    border: 2px solid black;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    width: 30%;
+}
+#userName{
+    margin-bottom: 1rem;
+}
+form button{
+    margin-top: 1.2rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: rgba(97, 126, 84, 0.3);
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+form button:hover{
+    cursor: pointer;
+    background-color: rgba(97, 126, 84, 0.5);
+}
+form input{
+    height: 2rem;
+    padding: 1rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1.2rem;
+}
+form input::placeholder{
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+label::before{
+    content: "*";
+    color: rgb(209, 40, 40);
+}
+
+#yourWallet{
+    margin-top: 2rem;
+    border: 5px dotted rgba(97, 126, 84, 0.3);
+    background-color: rgba(118, 178, 90, 0.2);
+    border-radius: 2rem;
+    padding: 2rem 1rem;
+    color: rgba(41, 63, 30, 0.8);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+.greetings{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.balance{
+    margin: 1rem 25%;
+    font-weight: 600;
+    font-size: 2rem;
+    color: black;
+    background-color: white;
+    padding: .8rem .3rem;
+    border-radius: .4rem;
+    position: relative;
+}
+.balance span{
+    font-weight: 800;
+    margin-right: .3rem;
+    margin-left: -3rem;
+}
+.sale span{
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+.logo{
+    width: 3rem;
+    position: absolute;
+    bottom: .5rem;
+}
+
+@media screen and (max-width: 1400px){
+    form, #yourWallet{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 800px){
+    form, #yourWallet{
+        width: 100%;
+    }
+}
