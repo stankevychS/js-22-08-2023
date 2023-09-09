@@ -21,10 +21,9 @@ let cryptWallet = {
         cryptoBalance: Math.floor(Math.random()*100+1),
         cryptoCurrency: 4.84
     },
-    addWallet: function() {
+    addWallet: function(cryptoName) {
         event.preventDefault(); //зупиняє оновлення сторінки, взяла з гуглу
-        const userName = document.getElementById("userName").value,
-            cryptoName = document.getElementById("cryptoName").value;
+        const userName = document.getElementById("userName").value;
     
         if (userName==="" || cryptoName==="") {
             return alert("Заповніть всі поля!");
@@ -90,4 +89,8 @@ let cryptWallet = {
     }
 };
 
-btn.onclick = cryptWallet.addWallet;
+
+btn.onclick = function () {
+    const cryptoInput = document.getElementById("cryptoName").value;
+    cryptWallet.addWallet(cryptoInput);
+}
