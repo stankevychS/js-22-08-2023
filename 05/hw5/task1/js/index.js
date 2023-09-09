@@ -77,7 +77,7 @@ let cryptWallet = {
                         </div>
                     </div>
                     <div class="sale">
-                        Якщо Ви сьогодні продасте їх, то отримаєте <span><strong>${cryptWallet.Stellar.cryptoBalance*cryptWallet.Stellar.cryptoCurrency.toFixed(2)}</strong> грн</span>.
+                        Якщо Ви сьогодні продасте їх, то отримаєте <span><strong>${(cryptWallet.Stellar.cryptoBalance*cryptWallet.Stellar.cryptoCurrency).toFixed(2)}</strong> грн</span>.
                     </div>
                 </div>
             `;
