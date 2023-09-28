@@ -72,7 +72,7 @@ class Lorry extends Car{
                 Марка вантажівки: ${this.model}
                 Клас вантажівки: ${this.class}
                 Вага вантажівки: ${this.weight}
-                Вантажопідйомністю кузова: ${this.carrying}
+                Вантажопідйомність кузова: ${this.carrying}
                 Інформація про водія вантажівки
                 __________________
                 ПІБ водія: ${this.driver.pib}
