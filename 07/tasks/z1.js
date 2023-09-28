@@ -25,6 +25,9 @@ class CreateNewUser2 {
     }
     getLogin2 () {
         return this.firstName.charAt(0).toLowerCase() + this.lastName;
+        //return (this.firstName.charAt(0) + this.lastName).toLowerCase()
+        //return (this.firstName.charAt(0) + this.lastName).toLowerCase()
+        //return this.firstName.charAt(0).toUpperCase() + this.lastName.toLowerCase() + this.birthday.split(".")[2]
     }
 }
 const newUser2 = new CreateNewUser2(userInfo.name, userInfo.surname)

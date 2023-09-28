@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM дерево</title>
+    <!-- document object model -->
+
+    <!-- Script в head -->
+    <script> //якщо скрипт в хеді, тобто перед кодом хтмл, подія onload;
+        //window - має в собі все
+
+        window.onload = function () { //WINDOW.ONLOAD (функція)
+            function f () {
+                document.write("<div>hello world</div>");
+            }
+            let p = document.getElementById("getme");
+        
+        }
+
+        //DOM - document
+        //BOM - navigator
+
+        //працювати з елементами html-сторінки через js
+        //всі елементи сторінки - об'єкти дом-дерева
+        
+    </script>
+    <script src="dom-tree.js"></script>
+    
+</head>
+<body>
+    <!-- атрибути on -> javascript (нав'язливі атрибути) -->
+    <!-- краще не використовувати! -->
+    <button onclick="f()">click</button>
+
+    <a href="javascript:alert('hello')">aa</a>
+
+    <p id="par">get</p>
+
+    
+    так<input type="radio" name="answer" value="так" class="answer">
+    <br>ні<input type="radio" name="answer" value="ні" class="answer">
+    <br>не знаю<input type="radio" name="answer" value="не знаю" class="answer">
+    <br>
+    <input type="button" id="answerBtn" value="Відповідь">
+
+    <script>
+        document.getElementById("answerBtn").onclick = (e) => {
+            //масив елементів з атрибутом, повертає колекцію
+            //деструктуризація, спред-оператор
+            const [...radioButtons] = document.getElementsByClassName("answer");
+            //[radioButtons] - лише перший
+            let res = "";
+
+            radioButtons.forEach(function (input){ //до трьох аргументів
+                if (input.checked){
+                    console.log(input.value); //true\false
+                }
+            })
+
+        }
+    </script>
+
+    
+</body>
+</html>

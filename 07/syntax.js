@@ -42,6 +42,11 @@ const funcArrow3 = arg1 => console.log(arg1); //якщо коротка
 funcArrow3("abc");
 
 
+hello = () => {
+    return "Hello World!";
+}
+hello = () => "Hello World!"; //якщо одне значення, то автоматично ретурнає
+
 //.filter(function (item) {return item>0}) - фільтрування масиву
 //якщо item>0, то він запишеться в новий масив
 
@@ -71,6 +76,7 @@ print("Vasya");
 
 //REST - ЗБІР ЕЛЕМЕНТІВ У МАСИВ ЧИ ОБ'ЄКТ
 //rest-оператор
+//...rest должен всегда быть последним.
 //замість псевдо-масиву arguments 
 //(добре для стрілкових функцій, але працює у всіх функціях)
 const f = (...arr) => { //...arr = масив всіх аргументів
@@ -82,7 +88,7 @@ f(1,2);
 f(1,2,3,4,5);
 
 
-//SPREAD - РОЗПАКОВКА МАСИВУ В ОКРЕМІ ЕЛЕМЕНТИ (протилежний до rest)
+//SPREAD - РОЗПАКОВКА МАСИВУ ЧИ ОБ'ЄКТУ В ОКРЕМІ ЕЛЕМЕНТИ (протилежний до rest)
 //spread-оператор
 const array2_1 = [100,2,57,62];
 const copy = [77,...array2_1,77]; //всі елементи
@@ -112,9 +118,10 @@ const {name,age} = user2; //витягуєм ім'я і вік
 console.log(name);
 console.log(age.one, age);
 
-//витягуєм все за допомогою spread
+//витягуєм все за допомогою rest (?spread?)
 const {...all} = user2; 
 console.log(all);
+console.log(all.name);
 
 const array3 = [1,2,3,4,5];
 const [a,b,c, ...others] = array3;
