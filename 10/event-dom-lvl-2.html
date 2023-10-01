@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>перехватка\всплиття</title>
+    <style>
+        div{
+            width: auto;
+            padding: 50px;
+            border: 2px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="first"> first
+        <div id="second"> second
+            <div id="third">third</div>
+        </div>
+    </div>
+    <!--ЕТАПИ ПЕРЕХВАТУ І ВСПЛИТТЯ-->
+
+
+    <!--  ЕТАП ПЕРЕХВАТУ - true -->
+    <!--натиснуто div#third :
+        1)div#first click
+        2)div#second click
+        3)div#third click
+    -->
+
+    <!--  ЕТАП ВСПЛИТТЯ - false -->
+    <!--натиснуто div#third :
+        1)div#third click
+        2)div#second click
+        3)div#first click
+    -->
+
+    <script>
+        const div1 = document.getElementById("first");
+        const div2 = document.getElementById("second");
+        const div3 = document.getElementById("third");
+
+        
+        div2.addEventListener('click', function () {
+            event.target.style.backgroundColor = "blue"; 
+        }, true); //true - йде перехват, div3 буде зеленим
+        
+        div3.addEventListener('click', function () {
+            event.target.style.backgroundColor = "green"; 
+        });
+        
+        div1.addEventListener('click', function (e) {
+            e.target.style.backgroundColor = "yellow"; 
+        }, true); //якщо false, то всі стануть жовтими
+
+        
+    </script>
+</body>
+</html>

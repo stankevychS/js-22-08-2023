@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-LVL-2</title>
+</head>
+<body> 
+    <button id="product">параграф</button>
+    <button id="product2">параграф2</button>
+    <script>
+        const product = document.getElementById("product");
+
+        //ПРОБЛЕМА ДОМ-ЛВЛ-0 = НЕ МОЖНА НАВІСИТИ ДЕКІЛЬКА ОБРОБНИКІВ ПОДІЙ
+        product.onclick = function () {
+            console.log(1);
+        }
+        product.onclick = function () {
+            console.log(2); //виведеться лише одна остання
+        } 
+
+        //DOM-LVL-2 = .addEventListener('назва події', function () {})
+        product.addEventListener('click', function () {
+            console.log(3)//спрацює
+        });
+        product.addEventListener('click', function () {
+            console.log(4)//спрацює
+        });
+
+        function st () {
+            alert('фнкція');
+        }
+        product.addEventListener('click', st);
+
+        
+        
+    </script>
+</body>
+</html>

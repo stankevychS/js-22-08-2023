@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-LVL-0</title>
+</head>
+<body> <!--атрибут ON в хтмл НЕ ПИСАТИ!!!-->
+    <input type="text" value="ввести" onclick="alert('нав`язливий джаваскрипт, краще не використовувати!'); this.value=prompt('new value');">
+    <input type="button" value="click me" onclick="for (let i = 0; i<3; i++) alert(i+1)">
+    <input type="button" id="btn" value="click me !!">
+    <p contenteditable="">пиши сюди</p>
+    <script>
+        const btn = document.getElementById("btn");
+        function funcName () {
+            btn.value = "clicked!"; 
+        }
+        btn.onclick = funcName; //без дужок
+    </script>
+</body>
+</html>
