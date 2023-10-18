@@ -22,7 +22,9 @@ function send(url, callback) {
             console.log(ajax.response); //строка json
             console.log(JSON.parse(ajax.response)); //строка стає js-кодом (масив, об'єкт тощо)
             callback(JSON.parse(ajax.response), table);
-        }//ДОПИСАТИ ТУТ ЕЛС ІФ
+        }else if (ajax.readyState === 4 && ajax.status !== 200){
+            console.error("Помилка");
+        }
     })
 }
 
